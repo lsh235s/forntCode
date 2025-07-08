@@ -16,8 +16,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                // Dockerfile 경로를 명확하게 지정
-                sh "docker build -t $IMAGE_NAME -f ./Dockerfile ."
+                sh "docker build -t $IMAGE_NAME ."
             }
         }
 
