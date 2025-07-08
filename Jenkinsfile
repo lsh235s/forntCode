@@ -21,9 +21,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
             steps {
                 sh "docker rm -f $CONTAINER_NAME || true"
                 sh "docker run -d -p ${PORT}:80 --name $CONTAINER_NAME $IMAGE_NAME"
