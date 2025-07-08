@@ -16,9 +16,8 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                dir('frontend') {
-                    sh "docker build -t $IMAGE_NAME ."
-                }
+                // frontend 디렉토리로 이동하지 않고 루트에서 빌드
+                sh "docker build -t $IMAGE_NAME ."
             }
         }
 
